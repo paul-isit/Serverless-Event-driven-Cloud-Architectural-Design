@@ -24,19 +24,19 @@ versions of media to be automatically produced (e.g. thumbnails, low resolution 
 for mobile phones, or video transcoding). The process for reformatting/transcoding/reprocessing
 media should meet the following criteria:
 
-a. When a media item is uploaded to the S3 bucket, the creation of these alternative versions
-should be triggered automatically. Transformed media will also be stored in S3.
-
-b. The architecture for processing media should be extensible. For example, in the future it may
-be desirable to add the ability to automatically identify tags in photos using AI.
-
-c. Different processing services should be able to be run on the most suitable platform – e.g. EC2
-instance, Lambda, or other AWS managed services. Given cost and performance constraints it is
-assumed that all services will be provided in the AWS ecosystem.
-
-d. The reprocessing/reformatting of media is often a time-consuming task. The architecture should
-be designed so that the application does not become overloaded and is effectively decoupled.
-For example, multiple ‘worker’ nodes can process transformation jobs that have been placed on
-a queue. The worker nodes may specialise in particular tasks. For example, one node may
-specialise in video transcoding which is much more processor and memory intensive than
-reformatting a photograph
+  a. When a media item is uploaded to the S3 bucket, the creation of these alternative versions
+  should be triggered automatically. Transformed media will also be stored in S3.
+  
+  b. The architecture for processing media should be extensible. For example, in the future it may
+  be desirable to add the ability to automatically identify tags in photos using AI.
+  
+  c. Different processing services should be able to be run on the most suitable platform – e.g. EC2
+  instance, Lambda, or other AWS managed services. Given cost and performance constraints it is
+  assumed that all services will be provided in the AWS ecosystem.
+  
+  d. The reprocessing/reformatting of media is often a time-consuming task. The architecture should
+  be designed so that the application does not become overloaded and is effectively decoupled.
+  For example, multiple ‘worker’ nodes can process transformation jobs that have been placed on
+  a queue. The worker nodes may specialise in particular tasks. For example, one node may
+  specialise in video transcoding which is much more processor and memory intensive than
+  reformatting a photograph
